@@ -1,0 +1,4 @@
+ 1.find current running port:- netstat -lpn | grep 8080
+ 
+ 2. kill port:- netstat -lpn | grep 8080
+ 
