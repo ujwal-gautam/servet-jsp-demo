@@ -17,12 +17,14 @@ public class ServletDemo extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		resp.setContentType("text/plain");
-		resp.getWriter().write("Hello World! Maven Web Project Example.");
 		/*
-		 * PrintWriter printWriter = resp.getWriter();
-		 * printWriter.print("<h1>Hello</h1>");
+		 * resp.setContentType("text/plain");
+		 * resp.getWriter().write("Hello World! Maven Web Project Example.");
 		 */
+		
+		  PrintWriter printWriter = resp.getWriter();
+		  printWriter.print("<h1>Hello</h1>");
+		 
 
 	}
 
