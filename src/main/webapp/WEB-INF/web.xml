@@ -6,4 +6,12 @@
 		<servlet-name>hello</servlet-name>
 		<servlet-class>com.demo.ServletDemo.java</servlet-class>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+
+
 </web-app>
