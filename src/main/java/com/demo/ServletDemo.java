@@ -30,18 +30,17 @@ public class ServletDemo extends HttpServlet {
 		public void init() throws ServletException {
 			// TODO Auto-generated method stub
 //			super.init();
-			try {
-			     Class.forName("com.mysql.jdbc.Driver");
-			} catch (ClassNotFoundException e) {
-				System.out.println(e.getMessage());
-				// TODO: handle exception
-			}
+			/*
+			 * try { Class.forName("com.mysql.jdbc.Driver"); } catch (ClassNotFoundException
+			 * e) { System.out.println(e.getMessage()); // TODO: handle exception }
+			 */
 		}
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 		/*
 		 * resp.setContentType("text/plain");
 		 * resp.getWriter().write("Hello World! Maven Web Project Example.");
@@ -51,51 +50,37 @@ public class ServletDemo extends HttpServlet {
 		 * printWriter.print("<h1>Hello</h1>");
 		 */
 		
-		response.setContentType("text/html");
-		PrintWriter log = response.getWriter();
-		String name = "";
-		int id = 0;
-		String query = "select * from student_info;";
-		
-		try {
-			connection = DriverManager.getConnection(URL,USER,PASSWORD);
-			preparedStatement = connection.prepareStatement(query);
-			
-			resultSet = preparedStatement.executeQuery();
-			if (!resultSet.next()) {
-				log.println("<center> <h3>Hello, World </h3><center>");
-				return;
-			}
-			name =resultSet.getString("name");
-			id = resultSet.getInt("id");
-			
-			log.println("<center><h3>Hello, " + name + " </h3><center>");
-		    log.println("<center>");
-            log.println("<table border='1' cellpadding ='5'>");
-            log.println("<tr>");
-            log.println("<th> ID </th>");
-            log.println("<th> Student Name </th>");
-            log.println("</tr>");
-
-            log.println("<tr>");
-            log.println("<td>" + id + "</td>");
-            log.println("<td>" + name + "</td>");
-            log.println("</tr>");
-            log.println("</table>");
-            log.println("</center>");
-			
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			// TODO: handle exception
-		}
+		/*
+		 * response.setContentType("text/html"); PrintWriter log = response.getWriter();
+		 * String name = ""; int id = 0; String query = "select * from student_info;";
+		 * 
+		 * try { connection = DriverManager.getConnection(URL,USER,PASSWORD);
+		 * preparedStatement = connection.prepareStatement(query);
+		 * 
+		 * resultSet = preparedStatement.executeQuery(); if (!resultSet.next()) {
+		 * log.println("<center> <h3>Hello, World </h3><center>"); return; } name
+		 * =resultSet.getString("name"); id = resultSet.getInt("id");
+		 * 
+		 * log.println("<center><h3>Hello, " + name + " </h3><center>");
+		 * log.println("<center>"); log.println("<table border='1' cellpadding ='5'>");
+		 * log.println("<tr>"); log.println("<th> ID </th>");
+		 * log.println("<th> Student Name </th>"); log.println("</tr>");
+		 * 
+		 * log.println("<tr>"); log.println("<td>" + id + "</td>"); log.println("<td>" +
+		 * name + "</td>"); log.println("</tr>"); log.println("</table>");
+		 * log.println("</center>");
+		 * 
+		 * } catch (SQLException e) { System.out.println(e.getMessage()); // TODO:
+		 * handle exception }
+		 */
 		 
 
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		super.doPost(req, resp);
-	}
+	/*
+	 * @Override protected void doPost(HttpServletRequest req, HttpServletResponse
+	 * resp) throws ServletException, IOException { super.doPost(req, resp); }
+	 */
 
 	@Override
 	public void destroy() {
