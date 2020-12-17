@@ -40,7 +40,7 @@ public class ServletDemo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/hello.jsp").forward(request, response);
 		/*
 		 * resp.setContentType("text/plain");
 		 * resp.getWriter().write("Hello World! Maven Web Project Example.");
