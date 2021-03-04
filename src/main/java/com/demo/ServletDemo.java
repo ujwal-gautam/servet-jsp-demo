@@ -110,6 +110,7 @@ public class ServletDemo extends HttpServlet {
 				// TODO Auto-generated catch block
 				System.out.println("git Testing");
 				System.out.println(e.getMessage());
+				System.out.println("re connection");
 			}
 		}
 
