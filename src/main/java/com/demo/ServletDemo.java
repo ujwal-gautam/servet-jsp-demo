@@ -108,8 +108,10 @@ public class ServletDemo extends HttpServlet {
 				connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
+				System.out.println("git Testing");
 				System.out.println(e.getMessage());
 			}
 		}
+
 	}
 }
